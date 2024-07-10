@@ -21,14 +21,14 @@ export default function Navigation({}) {
         <>
           <Link
             href="/"
-            className="w-52 h-10 flex items-center text-primary shrink-0"
+            className="w-44 xs:w-52 h-10 flex items-center text-primary shrink-0"
             data-hide-on-theme="dark"
           >
             <WarsaLight />
           </Link>
           <Link
             href="/"
-            className="w-52 h-10 flex items-center text-primary shrink-0"
+            className="w-44 xs:w-52 h-10 flex items-center text-primary shrink-0"
             data-hide-on-theme="light"
           >
             <WarsaDark />

@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Footer({}) {
   return (
     <footer className="md:container">
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-4 justify-between border-y border-outline-variant xs:px-10 py-6">
+      <div className="flex flex-col gap-8 lg:flex-row lg:gap-4 justify-between border-y border-outline-variant px-4 xs:px-10 py-6">
         {/* Left */}
         <aside className="flex flex-col gap-4">
           <>
