@@ -5,7 +5,8 @@ import "./globals.css";
 
 import { cn } from "@/lib/utils";
 import Navigation from "@/components/layouts/navigation";
-import Footer from "@/components/layouts/navigation/footer";
+import Footer from "@/components/layouts/footer";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navigation />
           <main className="pt-16">{children}</main>
           <Footer />
+          <ModalProvider />
         </ThemeProvider>
       </body>
     </html>
