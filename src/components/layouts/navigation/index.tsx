@@ -15,8 +15,8 @@ import { ListItems } from "@/lib/mock-data";
 
 export default function Navigation({}) {
   return (
-    <header className="bg-surface h-16 py-2 fixed w-full flex items-center z-[99]">
-      <nav className="md:container mx-auto w-full px-2 md:px-0  flex justify-between items-center">
+    <header className="bg-surface h-16 py-2 fixed w-full flex items-center z-[99] px-4 md:px-0">
+      <nav className="md:container mx-auto w-full  flex justify-between items-center">
         {/* Logo */}
         <>
           <Link
