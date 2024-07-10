@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { ListItems } from "@/lib/mock-data";
+import Image from "next/image";
 
 export default function Navigation({}) {
   return (
@@ -24,14 +25,26 @@ export default function Navigation({}) {
             className="w-44 xs:w-52 h-10 flex items-center text-primary shrink-0"
             data-hide-on-theme="dark"
           >
-            <WarsaLight />
+            {/* <WarsaLight /> */}
+            <Image
+              src={"/warsa-light.svg"}
+              alt="Warsa"
+              width={208}
+              height={40}
+            />
           </Link>
           <Link
             href="/"
             className="w-44 xs:w-52 h-10 flex items-center text-primary shrink-0"
             data-hide-on-theme="light"
           >
-            <WarsaDark />
+            {/* <WarsaDark /> */}
+            <Image
+              src={"/warsa-dark.svg"}
+              alt="Warsa"
+              width={208}
+              height={40}
+            />
           </Link>
         </>
 

@@ -56,7 +56,7 @@ export default function Footer({}) {
             >
               Arazi piyasası ve emlak güncellemeleri
             </Label>
-            <div className="flex h-12 items-center rounded-lg bg-surface-container-high pl-4 pr-1 ring-offset-background focus-within:ring-1 focus-within:ring-primary focus-within:ring-offset-2 w-full max-w-96 lg:max-w-auto">
+            <div className="flex h-12 items-center rounded-lg bg-surface-container-high pl-4 pr-1 ring-offset-background focus-within:ring-1 focus-within:ring-primary focus-within:ring-offset-2 w-full max-w-80 xs:max-w-96 lg:max-w-auto">
               <input
                 type="email"
                 placeholder="Abone ol"
