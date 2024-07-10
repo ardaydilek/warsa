@@ -40,10 +40,10 @@ export function WarsaBrown({ color = "black" }: { color?: string }) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(-104.81 167.6) scale(1021.76 1021.76)"
         >
-          <stop stop-color="#CDA998" />
+          <stop stopColor="#CDA998" />
           <stop
             offset="1"
-            stop-color="#614B40"
+            stopColor="#614B40"
           />
         </radialGradient>
         <radialGradient
@@ -54,10 +54,10 @@ export function WarsaBrown({ color = "black" }: { color?: string }) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(-104.81 0.499849) scale(1021.76 1021.76)"
         >
-          <stop stop-color="#CDA998" />
+          <stop stopColor="#CDA998" />
           <stop
             offset="1"
-            stop-color="#614B40"
+            stopColor="#614B40"
           />
         </radialGradient>
         <radialGradient
@@ -68,10 +68,10 @@ export function WarsaBrown({ color = "black" }: { color?: string }) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(0.4998 0.499849) scale(1021.76 1021.76)"
         >
-          <stop stop-color="#CDA998" />
+          <stop stopColor="#CDA998" />
           <stop
             offset="1"
-            stop-color="#614B40"
+            stopColor="#614B40"
           />
         </radialGradient>
         <radialGradient
@@ -82,10 +82,10 @@ export function WarsaBrown({ color = "black" }: { color?: string }) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(-104.81 0.499849) scale(1021.76 1021.76)"
         >
-          <stop stop-color="#CDA998" />
+          <stop stopColor="#CDA998" />
           <stop
             offset="1"
-            stop-color="#614B40"
+            stopColor="#614B40"
           />
         </radialGradient>
         <radialGradient
@@ -96,10 +96,10 @@ export function WarsaBrown({ color = "black" }: { color?: string }) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(-104.81 0.500002) scale(1021.76 1021.76)"
         >
-          <stop stop-color="#CDA998" />
+          <stop stopColor="#CDA998" />
           <stop
             offset="1"
-            stop-color="#614B40"
+            stopColor="#614B40"
           />
         </radialGradient>
         <clipPath id="clip0_66_4984">

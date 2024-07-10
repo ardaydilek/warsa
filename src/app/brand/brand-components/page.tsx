@@ -35,11 +35,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search } from "@/components/ui/search";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function Page({}) {
   return (
     <div className="container py-10">
       <div className="flex flex-col gap-2 my-4">
+        <Link href="/brand">
+          <ArrowLeft />
+        </Link>
         Temayı Değiştir
         <ModeToggle />
       </div>
@@ -235,6 +240,38 @@ export default function Page({}) {
             >
               <WarsaCool
                 key={"warsa-cool-6"}
+                fill1="#614B40"
+                fill2="#614B40"
+              />
+            </Button>
+          </div>
+
+          {/* Chips */}
+          <div className="flex gap-4 items-center">
+            <Button
+              variant={"chips"}
+              size={"lg"}
+            >
+              Chips & Large
+            </Button>
+            <Button
+              variant={"chips"}
+              size={"default"}
+            >
+              Chips & Default
+            </Button>
+            <Button
+              variant={"chips"}
+              size={"sm"}
+            >
+              Chips & Small
+            </Button>
+            <Button
+              variant={"chips"}
+              size={"icon"}
+            >
+              <WarsaCool
+                key={"warsa-cool-7"}
                 fill1="#614B40"
                 fill2="#614B40"
               />

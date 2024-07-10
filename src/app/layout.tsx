@@ -4,6 +4,8 @@ import { Manrope as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
+import Navigation from "@/components/layouts/navigation";
+import Footer from "@/components/layouts/navigation/footer";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -31,7 +33,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navigation />
+          <main className="pt-16">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

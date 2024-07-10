@@ -19,28 +19,28 @@
   <defs>
     <radialGradient id="paint0_radial_66_5000" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(301.468 201.937) scale(369.843 369.664)">
-      <stop stop-color="#CDA998" />
-      <stop offset="1" stop-color="#614B40" />
+      <stop stopColor="#CDA998" />
+      <stop offset="1" stopColor="#614B40" />
     </radialGradient>
     <radialGradient id="paint1_radial_66_5000" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(0.24587 201.937) scale(369.843 369.664)">
-      <stop stop-color="#CDA998" />
-      <stop offset="1" stop-color="#614B40" />
+      <stop stopColor="#CDA998" />
+      <stop offset="1" stopColor="#614B40" />
     </radialGradient>
     <radialGradient id="paint2_radial_66_5000" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(0.245796 201.937) scale(369.843 369.665)">
-      <stop stop-color="#CDA998" />
-      <stop offset="1" stop-color="#614B40" />
+      <stop stopColor="#CDA998" />
+      <stop offset="1" stopColor="#614B40" />
     </radialGradient>
     <radialGradient id="paint3_radial_66_5000" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(0.245833 201.937) scale(369.843 369.664)">
-      <stop stop-color="#CDA998" />
-      <stop offset="1" stop-color="#614B40" />
+      <stop stopColor="#CDA998" />
+      <stop offset="1" stopColor="#614B40" />
     </radialGradient>
     <radialGradient id="paint4_radial_66_5000" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(301.468 201.937) scale(369.843 369.664)">
-      <stop stop-color="#CDA998" />
-      <stop offset="1" stop-color="#614B40" />
+      <stop stopColor="#CDA998" />
+      <stop offset="1" stopColor="#614B40" />
     </radialGradient>
     <clipPath id="clip0_66_5000">
       <rect width="699" height="531" fill="white" />

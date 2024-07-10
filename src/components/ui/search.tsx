@@ -11,7 +11,7 @@ const Search = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div
         className={cn(
-          "flex h-14 items-center rounded-full border border-primary bg-surface-container-high pl-5 ring-offset-background focus-within:ring-1 focus-within:ring-primary focus-within:ring-offset-2 min-w-80",
+          "flex h-14 items-center rounded-full bg-surface-container-high pl-5 ring-offset-background focus-within:ring-1 focus-within:ring-primary focus-within:ring-offset-2 min-w-80",
           className
         )}
       >

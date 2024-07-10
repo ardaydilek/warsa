@@ -1,8 +1,13 @@
 import { ModeToggle } from "@/components/mode-toggle";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function Page({}) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Link href="/brand">
+        <ArrowLeft />
+      </Link>
       Temayı Değiştir
       <ModeToggle />
       <div className="grid grid-cols-4 my-20 gap-4">

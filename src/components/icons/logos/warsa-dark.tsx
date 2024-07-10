@@ -5,7 +5,7 @@ export function WarsaDark({ color = "black" }: { color?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_66_4993)">
+      <g clipPath="url(#clip0_66_4993)">
         <path
           d="M160.74 2.37988L145.29 60.5299C156.13 57.8899 165.99 57.3999 171.77 57.3999C173.88 57.3999 175.15 57.4699 175.29 57.4799L178.95 57.6899L195.86 2.37988H160.74ZM113.31 2.37988H83.54L59.93 91.6799L36.11 2.37988H0L42.07 139.31H76L98.03 56.1599L105.61 85.0099C111.48 76.8299 119.76 70.2799 130.24 65.6099L113.31 2.37988Z"
           fill="white"
@@ -40,10 +40,10 @@ export function WarsaDark({ color = "black" }: { color?: string }) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(54.44 223.09) scale(506.2 506.2)"
         >
-          <stop stop-color="#CDA998" />
+          <stop stopColor="#CDA998" />
           <stop
             offset="1"
-            stop-color="#614B40"
+            stopColor="#614B40"
           />
         </radialGradient>
         <clipPath id="clip0_66_4993">

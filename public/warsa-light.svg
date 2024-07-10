@@ -22,8 +22,8 @@
   <defs>
     <radialGradient id="paint0_radial_66_4475" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(70.2 195.33) scale(301.58 301.58)">
-      <stop stop-color="#CDA998" />
-      <stop offset="1" stop-color="#614B40" />
+      <stop stopColor="#CDA998" />
+      <stop offset="1" stopColor="#614B40" />
     </radialGradient>
     <clipPath id="clip0_66_4475">
       <rect width="700.34" height="141.69" fill="white" />
