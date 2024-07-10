@@ -7,6 +7,7 @@ import {
   FooterRightLinks,
 } from "@/lib/mock-data";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer({}) {
@@ -21,14 +22,26 @@ export default function Footer({}) {
               className="w-44 h-10 flex items-center text-primary shrink-0"
               data-hide-on-theme="dark"
             >
-              <WarsaLight />
+              {/* <WarsaLight /> */}
+              <Image
+                src={"/warsa-light.svg"}
+                alt="Warsa"
+                width={208}
+                height={40}
+              />
             </Link>
             <Link
               href="/"
               className="w-44 h-10 flex items-center text-primary shrink-0"
               data-hide-on-theme="light"
             >
-              <WarsaDark />
+              {/* <WarsaDark /> */}
+              <Image
+                src={"/warsa-dark.svg"}
+                alt="Warsa"
+                width={208}
+                height={40}
+              />
             </Link>
           </>
 
