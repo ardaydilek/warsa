@@ -39,16 +39,15 @@ export default function ImageInfoContainer({}) {
               className="w-64 relative space-y-1"
               href={`/`}
             >
-              <picture className="w-64 relative before:content-[''] before:block before:pt-[100%] before:relative before:rounded-lg before:bg-gradient-210 before:z-[1] before:w-[101%] before:h-[101%] filter">
+              <div className="w-64 relative before:content-[''] before:block before:pt-[100%] before:relative before:rounded-lg before:bg-gradient-210 before:z-[1] before:w-[101%] before:h-[101%] filter">
                 <Image
                   src={`${process.env.BUCKET_URL}${image.src}`}
                   alt={image.title}
                   width={500}
                   height={500}
                   className="absolute w-full h-full inset-0 rounded-lg object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
-                  loading="eager"
                 />
-              </picture>
+              </div>
               <p className="font-bold text-md tracking-tight group-hover:underline">
                 {image.title}
               </p>
