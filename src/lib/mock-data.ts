@@ -578,3 +578,12 @@ export const LandCoverImages = [
   { title: "Master Villas Üzümlü", src: "/master-villas-uzumlu/1.jpg" },
   { title: "Master Köy Doğa Evleri", src: "/masterkoy-doga-evleri/2.jpg" },
 ];
+
+export const LandCounties = [
+  "Kocaeli",
+  "Edirne",
+  "İzmir",
+  "Yalova",
+  "Van",
+  "Erzincan",
+];

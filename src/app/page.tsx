@@ -4,6 +4,7 @@ import Hero from "@/components/hero";
 
 import PropertiesCardsContainer from "@/components/properties-cards-container";
 import IconInfoContainer from "@/components/icon-info-container";
+import { FeatureSection } from "@/components/feature-section";
 
 export default function Home() {
   return (
@@ -17,8 +18,13 @@ export default function Home() {
       </div>
 
       {/* Image Info Container */}
-      <div className="mt-10 md:container">
+      <div className="mt-20 md:container">
         <ImageInfoContainer />
+      </div>
+
+      {/* Feature Section */}
+      <div className="mt-32 md:container">
+        <FeatureSection />
       </div>
 
       {/* Nearby Lands */}

@@ -12,6 +12,7 @@ export function WarsaCool({
   return (
     <svg
       viewBox="0 0 699 531"
+      width={300}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath={`url(#clip${id})`}>

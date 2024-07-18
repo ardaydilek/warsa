@@ -13,12 +13,8 @@ export default function IconInfoContainer({}) {
           <p className="font-medium text-sm leading-5 tracking-[0.25px] max-w-lg pr-3 lg:pr-0">
             Nakdiniz; enflasyon değerlerinin altında kalan banka faizleriyle,
             temettü oranları öngörülemeyen borsayla, yükselen borsa faizleriyle,
-            düşüşe geçmesi beklenen emlak yatırımlarıyla, dalgalı kurlarla,
-            güven tazeleyemeyen kripto paralarla, enflasyon oranlarının
-            gerisinde kalan yatırım fonu gelirleriyle, zarar açıklayan kurumlara
-            bağlı senetlerle, yarını belli olmayan mevduatlarla, yüksek
-            enflasyon oranlarıyla ve bu gibi bir çok yatırım araçlarıyla
-            erimesin. <br />
+            düşüşe geçmesi beklenen emlak yatırımlarıyla ve bu gibi bir çok
+            yatırım araçlarıyla erimesin. <br />
             <b>Warsa</b>, hayalinizdeki evi hayalinizde yatırıma dönüştürüyor.
           </p>
         </div>
