@@ -16,7 +16,27 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Heart } from "lucide-react";
 
-export default function PropertiesCard({ className }: { className?: any }) {
+export default function PropertiesCard({
+  className,
+  images,
+  title,
+  description,
+  social_areas,
+  status,
+  location,
+  added_date,
+  total_project_area,
+}: {
+  className?: any;
+  images: string[];
+  title: string;
+  description: string;
+  social_areas: string[];
+  status: string;
+  location: string;
+  added_date: string;
+  total_project_area?: string;
+}) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
@@ -53,7 +73,21 @@ export default function PropertiesCard({ className }: { className?: any }) {
           <Heart className="w-6 h-6 text-white hover:text-error" />
         </div>
         <CarouselContent className="!ml-0">
-          <CarouselItem className="relative pt-[65%]">
+          {images.map((image, index) => (
+            <CarouselItem
+              className="relative pt-[65%]"
+              key={`carousel-item-${index}`}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BUCKET_URL}${image}`}
+                alt={`${title}-${index}`}
+                width={400}
+                height={400}
+                className="absolute w-full h-full top-0 left-0 object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
+              />
+            </CarouselItem>
+          ))}
+          {/* <CarouselItem className="relative pt-[65%]">
             <Image
               src={"https://picsum.photos/400/400"}
               alt={"alt"}
@@ -79,7 +113,7 @@ export default function PropertiesCard({ className }: { className?: any }) {
               height={400}
               className="absolute w-full h-full top-0 left-0 object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
             />
-          </CarouselItem>
+          </CarouselItem> */}
         </CarouselContent>
         <div
           className="absolute bottom-2 right-0 flex justify-center items-center w-full text-white"
@@ -95,7 +129,7 @@ export default function PropertiesCard({ className }: { className?: any }) {
               current === 1 ? "block" : "hidden"
             )}
           >
-            5 gün önce
+            {added_date}
           </p>
           <p
             className={cn(
@@ -115,14 +149,18 @@ export default function PropertiesCard({ className }: { className?: any }) {
             1.500.000₺
           </h3>
           <h3 className="text-lg font-bold tracking-[-0.5px] leading-5">
-            1.000 m²
+            {total_project_area}
           </h3>
         </div>
-        <h4 className="text-surface-foreground tracking-[-0.5px]">Ankara</h4>
+        <h4 className="text-surface-foreground tracking-[-0.5px]">
+          {location}
+        </h4>
       </div>
 
       <div className="flex justify-between px-4 items-center pt-4">
-        <h5 className="text-sm font-bold tracking-[0.1px]">Bilkent, 06510</h5>
+        <h5 className="text-sm font-bold tracking-[0.1px]">
+          {location.split("-")[0]}, 06510
+        </h5>
 
         <div className="w-6 h-6 text-surface-on-variant hover:text-primary transition-colors duration-100 ease-in-out z-20">
           <Info />
