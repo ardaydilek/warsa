@@ -45,7 +45,8 @@ export default function ImageInfoContainer({}) {
                   alt={image.title}
                   width={500}
                   height={500}
-                  className="absolute w-full h-full top-0 left-0 rounded-lg object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
+                  className="absolute w-full h-full inset-0 rounded-lg object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
+                  loading="eager"
                 />
               </picture>
               <p className="font-bold text-md tracking-tight group-hover:underline">

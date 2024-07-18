@@ -505,7 +505,7 @@ export const LandData = [
       "Açık Hava Sinema",
     ],
     images: [
-      "/masterkoy-doga-evleri/1.jpg",
+      "/masterkoy-doga-evleri/1.png",
       "/masterkoy-doga-evleri/2.jpg",
       "/masterkoy-doga-evleri/3.jpg",
     ],
