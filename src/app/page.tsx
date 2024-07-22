@@ -23,9 +23,9 @@ export default function Home() {
       </div>
 
       {/* Feature Section */}
-      <div className="mt-32 md:container">
+      {/* <div className="mt-32 md:container">
         <FeatureSection />
-      </div>
+      </div> */}
 
       {/* Nearby Lands */}
       <div className="mt-20 md:container">
