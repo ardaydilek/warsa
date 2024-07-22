@@ -13,9 +13,9 @@ export default function Home() {
       <Hero />
 
       {/* Chips */}
-      <div className="max-w-5xl mx-auto py-3 mt-20 px-2 xs:px-8 relative">
+      {/* <div className="max-w-5xl mx-auto py-3 mt-20 px-2 xs:px-8 relative">
         <Chips />
-      </div>
+      </div> */}
 
       {/* Image Info Container */}
       <div className="mt-20 md:container">
