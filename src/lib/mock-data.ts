@@ -7,14 +7,20 @@ import {
   BookOpenCheck,
   ShieldCheck,
   Twitter,
+  Home,
+  LandPlot,
+  Pyramid,
+  Rss,
+  KeyRound,
+  Mail,
 } from "lucide-react";
 
 export const ListItems = [
-  { name: "anasayfa", href: "/" },
-  { name: "warsa", href: "/#" },
-  { name: "blog", href: "/blog" },
-  { name: "temsilci", href: "/#" },
-  { name: "iletisim", href: "/#" },
+  { name: "Warsa", href: "/about", icon: Home },
+  { name: "Arsa Türleri", href: "/land-types", icon: Pyramid },
+  { name: "Blog", href: "/blog", icon: Rss },
+  { name: "Topraktan Arsa", href: "/from-ground", icon: KeyRound },
+  { name: "İletişim", href: "/contact", icon: Mail },
 ];
 
 export const Counties = [

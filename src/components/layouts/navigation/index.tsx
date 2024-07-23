@@ -2,37 +2,27 @@ import Link from "next/link";
 
 import { NavigationLinkItems } from "./navigation-link-items";
 
-import Image from "next/image";
 import NavigationButtons from "./navigation-buttons";
+import { WarsaDark, WarsaLight } from "@/components/icons";
 
 export default function Navigation({}) {
   return (
-    <header className="bg-surface h-16 py-2 fixed w-full flex items-center z-[99] px-4 md:px-0">
-      <nav className="md:container mx-auto w-full  flex justify-between items-center">
+    <header className="fixed z-[99] flex h-16 w-full items-center bg-surface px-4 py-2 md:px-0">
+      <nav className="mx-auto flex w-full  items-center justify-between md:container">
         <>
           <Link
             href="/"
-            className="w-44 xs:w-52 h-10 flex items-center text-primary shrink-0"
+            className="flex h-10 w-44 items-center text-primary xs:w-52"
             data-hide-on-theme="dark"
           >
-            <Image
-              src={"/warsa-light.svg"}
-              alt="Warsa"
-              width={208}
-              height={40}
-            />
+            <WarsaLight />
           </Link>
           <Link
             href="/"
-            className="w-44 xs:w-52 h-10 flex items-center text-primary shrink-0"
+            className="flex h-10 w-44 items-center text-primary xs:w-52"
             data-hide-on-theme="light"
           >
-            <Image
-              src={"/warsa-dark.svg"}
-              alt="Warsa"
-              width={208}
-              height={40}
-            />
+            <WarsaDark />
           </Link>
         </>
 

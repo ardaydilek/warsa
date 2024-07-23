@@ -4,7 +4,6 @@ import Hero from "@/components/hero";
 
 import PropertiesCardsContainer from "@/components/properties-cards-container";
 import IconInfoContainer from "@/components/icon-info-container";
-import { FeatureSection } from "@/components/feature-section";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <Hero />
 
       {/* Chips */}
-      <div className="max-w-5xl mx-auto py-3 mt-20 px-2 xs:px-8 relative">
+      <div className="relative mx-auto mt-20 max-w-5xl px-2 py-3 xs:px-8">
         <Chips />
       </div>
 
@@ -21,11 +20,6 @@ export default function Home() {
       <div className="mt-20 md:container">
         <ImageInfoContainer />
       </div>
-
-      {/* Feature Section */}
-      {/* <div className="mt-32 md:container">
-        <FeatureSection />
-      </div> */}
 
       {/* Nearby Lands */}
       <div className="mt-20 md:container">

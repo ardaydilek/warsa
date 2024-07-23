@@ -16,7 +16,7 @@ export function NavigationLinkItems({
   return (
     <ul
       className={cn(
-        "gap-4 text-surface-foreground font-medium items-center",
+        "gap-6 text-surface-foreground font-medium items-center",
         className
       )}
     >

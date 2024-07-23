@@ -1,86 +1,52 @@
-import { auth, signOut } from "@/auth";
-import Link from "next/link";
-import { Menu } from "lucide-react";
-
-import { ListItems } from "@/lib/mock-data";
-import { cn } from "@/lib/utils";
+"use client";
 
 import { ModeToggle } from "@/components/mode-toggle";
-import { Button } from "@/components/ui/button";
-
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+  ClerkLoading,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  UserProfile,
+} from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import { MobileNavbar } from "@/components/layouts/navigation/mobile-navbar";
+import { DotIcon, Star } from "lucide-react";
 
-import AuthButtons from "./auth-buttons";
-
-export default async function NavigationButtons({}) {
-  const session = await auth();
-
+export default function NavigationButtons({}) {
   return (
-    <div className="flex gap-2 items-center">
-      {!session?.user ? (
-        <div className="hidden lg:flex gap-2 items-center">
-          <AuthButtons />
-        </div>
-      ) : (
-        <>
-          {/* <p>Hesap</p> */}
-          <form
-            className="hidden lg:flex"
-            action={async () => {
-              "use server";
-              await signOut();
-            }}
-          >
-            <Button type="submit">Çıkış Yap</Button>
-          </form>
-        </>
-      )}
-
+    <div className="flex items-center gap-3">
       <ModeToggle />
 
-      <Popover>
-        <PopoverTrigger className="lg:hidden">
-          <Menu className="w-6 h-6 text-primary" />
-        </PopoverTrigger>
-        <PopoverContent
-          className="z-[100] w-52 mt-2"
-          align="end"
-        >
-          <ul
-            className={cn(
-              "gap-4 font-medium items-center text-primary-foreground"
-            )}
+      <SignedOut>
+        <SignInButton mode="modal">
+          <Button className="hidden lg:flex">Giriş Yap</Button>
+        </SignInButton>
+      </SignedOut>
+      <SignedIn>
+        <ClerkLoading>
+          <div className="size-7 rounded-full bg-primary" />
+        </ClerkLoading>
+        <UserButton>
+          <UserButton.UserProfileLink
+            label="Kaydettikleriniz"
+            url="/account"
+            labelIcon={<Star className="size-4" />}
+          />
+          <UserButton.UserProfilePage
+            label="Terms"
+            labelIcon={<DotIcon />}
+            url="terms"
           >
-            {ListItems.map((item) => (
-              <li
-                key={item.name}
-                className={cn(
-                  "hover:text-surface-container hover:underline transition-colors duration-300 ease"
-                )}
-              >
-                <Link href={item.href}>{item.name}</Link>
-              </li>
-            ))}
+            <div>
+              <h1>Custom Terms Page</h1>
+              <p>This is the custom terms page</p>
+            </div>
+          </UserButton.UserProfilePage>
+        </UserButton>
+      </SignedIn>
 
-            {session?.user ? (
-              <form
-                action={async () => {
-                  "use server";
-                  await signOut();
-                }}
-              >
-                <Button type="submit">Çıkış Yap</Button>
-              </form>
-            ) : (
-              <AuthButtons />
-            )}
-          </ul>
-        </PopoverContent>
-      </Popover>
+      <MobileNavbar />
     </div>
   );
 }
