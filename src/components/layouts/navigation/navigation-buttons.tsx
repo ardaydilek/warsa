@@ -15,19 +15,31 @@ import { DotIcon, Star } from "lucide-react";
 
 export default function NavigationButtons({}) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2">
       <ModeToggle />
 
       <SignedOut>
+        <ClerkLoading>
+          {/* <div className="size-6 rounded-full bg-primary" /> */}
+          <Button className="hidden lg:flex">Giriş Yap</Button>
+        </ClerkLoading>
         <SignInButton mode="modal">
           <Button className="hidden lg:flex">Giriş Yap</Button>
         </SignInButton>
       </SignedOut>
       <SignedIn>
         <ClerkLoading>
-          <div className="size-7 rounded-full bg-primary" />
+          <div className="size-6 rounded-full bg-primary" />
         </ClerkLoading>
-        <UserButton>
+        <UserButton
+          appearance={{
+            elements: {
+              // rootBox: "border border-red-500",
+              userButtonBox: "",
+              avatarBox: "size-6",
+            },
+          }}
+        >
           <UserButton.UserProfileLink
             label="Kaydettikleriniz"
             url="/account"

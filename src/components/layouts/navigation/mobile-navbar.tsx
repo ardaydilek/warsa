@@ -71,9 +71,21 @@ export function MobileNavbar({}) {
     >
       <SheetTrigger asChild>
         {!open ? (
-          <MenuIcon className="size-6 cursor-pointer text-primary lg:hidden" />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-primary lg:hidden"
+          >
+            <MenuIcon className="size-5 text-primary" />
+          </Button>
         ) : (
-          <X className="size-6 cursor-pointer text-primary lg:hidden" />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-primary lg:hidden"
+          >
+            <X className="size-5 text-primary" />
+          </Button>
         )}
       </SheetTrigger>
       <SheetContent

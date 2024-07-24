@@ -2,6 +2,8 @@ export function WarsaDark({ color = "black" }: { color?: string }) {
   return (
     <svg
       viewBox="0 0 701 143"
+      width={200}
+      height={42}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
