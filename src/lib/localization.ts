@@ -749,7 +749,7 @@ export const trTR: LocalizationResource = {
       title: "Telefon numarası ekle",
       verifySubtitle:
         "{{identifier}} numarasına gönderilen doğrulama kodunu girin",
-      verifyTitle: "Verify phone number",
+      verifyTitle: "Telefon numarasını doğrula",
     },
     profilePage: {
       fileDropAreaHint:
