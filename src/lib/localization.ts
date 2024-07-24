@@ -482,9 +482,10 @@ export const trTR: LocalizationResource = {
       "Doğrulama başarısız oldu. Lütfen sayfayı yenileyin veya daha fazla yardım alın.",
     form_code_incorrect: "Hatalı kod",
     form_identifier_exists: "Hata",
-    form_identifier_exists__email_address: undefined,
-    form_identifier_exists__phone_number: undefined,
-    form_identifier_exists__username: undefined,
+    form_identifier_exists__email_address: "E-posta adresi zaten kullanılıyor.",
+    form_identifier_exists__phone_number:
+      "Telefon numarası zaten kullanılıyor.",
+    form_identifier_exists__username: "Kullanıcı adı zaten kullanılıyor.",
     form_identifier_not_found: "Hesap bulunamadı",
     form_param_format_invalid: "Geçersiz format",
     form_param_format_invalid__email_address:
