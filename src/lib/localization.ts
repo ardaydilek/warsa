@@ -34,7 +34,10 @@ export const trTR: LocalizationResource = {
   footerPageLink__privacy: "Gizlilik",
   footerPageLink__terms: "Şartlar",
   formButtonPrimary: "İleri",
-  formButtonPrimary__verify: "Verify",
+  formButtonPrimary__verify: "Doğrula",
+  // formFieldErrorText__identifier: "Hesabını bulamıyoruz. ",
+  // formFieldError__identifier: "Hesabını bulamıyoruz.",
+  // formFieldError__formFieldErrorText: "Hata",
   formFieldAction__forgotPassword: "Şifremi unuttum",
   formFieldError__matchingPasswords: "Şifreler eşleşiyor.",
   formFieldError__notMatchingPasswords: "Şifreler eşleşmiyor.",
@@ -186,13 +189,13 @@ export const trTR: LocalizationResource = {
           successMessage: "Organizasyondan ayrıldınız.",
           title: "Organizasyondan ayrıl",
         },
-        title: "Tehlike",
+        title: "Tehlikeli Bölge",
       },
       domainSection: {
-        menuAction__manage: "Manage",
-        menuAction__remove: "Delete",
-        menuAction__verify: "Verify",
-        primaryButton: "Add domain",
+        menuAction__manage: "Yönet",
+        menuAction__remove: "Sil",
+        menuAction__verify: "Doğrula",
+        primaryButton: "Domain ekle",
         subtitle:
           "Allow users to join the organization automatically or request to join based on a verified email domain.",
         title: "Verified domains",
@@ -275,14 +278,14 @@ export const trTR: LocalizationResource = {
   paginationRowText__of: "-",
   signIn: {
     accountSwitcher: {
-      action__addAccount: "Add account",
-      action__signOutAll: "Sign out of all accounts",
-      subtitle: "Select the account with which you wish to continue.",
-      title: "Choose an account",
+      action__addAccount: "Hesap ekle",
+      action__signOutAll: "Tüm hesaplardan çıkış yap",
+      subtitle: "Devam etmek istediğiniz hesabı seçin.",
+      title: "Hesap seç",
     },
     alternativeMethods: {
       actionLink: "Yardım al",
-      actionText: "Don’t have any of these?",
+      actionText: "Bu yöntemlerden hiçbiri yok mu?",
       blockButton__backupCode: "Yedekleme kodu kullan",
       blockButton__emailCode: "{{identifier}} adresine doğrulama kodu gönder",
       blockButton__emailLink:
@@ -297,11 +300,12 @@ export const trTR: LocalizationResource = {
           "Eğer hesabınıza giriş yapmakta zorluk yaşıyorsanız, hesabınıza erişiminizi sağlayabilmemiz için bize bir e-posta gönderin ve size yardımcı olalım.",
         title: "Yardım al",
       },
-      subtitle: "Facing issues? You can use any of these methods to sign in.",
+      subtitle:
+        "Bir sorun yaşıyorsanız, aşağıdaki yöntemlerden birini kullanarak giriş yapabilirsiniz.",
       title: "Farklı bir yöntem kullan",
     },
     backupCodeMfa: {
-      subtitle: "{{applicationName}}'ya giriş yapmak için",
+      subtitle: "{{applicationName}}",
       title: "Yedekleme kodu girişi",
     },
     emailCode: {
@@ -317,7 +321,7 @@ export const trTR: LocalizationResource = {
       },
       expired: {
         subtitle: "Devam etmek için en baştaki sekmeye dönün",
-        title: "Bu doğruşlama bağlantısının süresi dolmuş",
+        title: "Bu doğrulama bağlantısının süresi dolmuş",
       },
       failed: {
         subtitle: "Devam etmek için en baştaki sekmeye dönün",
@@ -349,10 +353,10 @@ export const trTR: LocalizationResource = {
     forgotPassword: {
       formTitle: "Şifre sıfırlama kodu",
       resendButton: "Tekrar gönder",
-      subtitle: "to reset your password",
-      subtitle_email: "First, enter the code sent to your email ID",
-      subtitle_phone: "First, enter the code sent to your phone",
-      title: "Reset password",
+      subtitle: "şfreni sıfırlamak için",
+      subtitle_email: "Önce, e-posta adresinize gönderdiğimiz kodu girin",
+      subtitle_phone: "Önce, telefon numaranıza gönderdiğimiz kodu girin",
+      title: "Şifremi sıfırla",
     },
     forgotPasswordAlternativeMethods: {
       blockButton__resetPassword: "Şifremi sıfırla",
@@ -392,7 +396,7 @@ export const trTR: LocalizationResource = {
     resetPassword: {
       formButtonPrimary: "Şifremi sıfırla",
       requiredMessage:
-        "For security reasons, it is required to reset your password.",
+        "Güvenlik nedenleriyle şifrenizi sıfırlamanız gereklidir.",
       successMessage: "Şifreniz başarıyla sıfırlandı. Oturumunuz açılıyor...",
       title: "Şifre sıfırlama",
     },
@@ -408,7 +412,7 @@ export const trTR: LocalizationResource = {
       actionLink__use_phone: "Telefon kullan",
       actionLink__use_username: "Kullanıcı adı kullan",
       actionText: "Hesabınız yok mu?",
-      subtitle: "{{applicationName}}'ya giriş yapmak için",
+      subtitle: "{{applicationName}}",
       title: "Giriş yap",
     },
     totpMfa: {
@@ -422,7 +426,7 @@ export const trTR: LocalizationResource = {
     continue: {
       actionLink: "Giriş yap",
       actionText: "Hesabınız var mı?",
-      subtitle: "{{applicationName}}'ya giriş yapmak için",
+      subtitle: "{{applicationName}}",
       title: "Eksik bilgileri tamamlayın",
     },
     emailCode: {
@@ -444,7 +448,7 @@ export const trTR: LocalizationResource = {
         title: "Giriş yapılıyor...",
       },
       resendButton: "Tekrar gönder",
-      subtitle: "{{applicationName}}'ya giriş yapmak için",
+      subtitle: "{{applicationName}}",
       title: "E-posta adresinizi doğrulayın",
       verified: {
         title: "Başarıyla doğrulandı",
@@ -473,29 +477,28 @@ export const trTR: LocalizationResource = {
   socialButtonsBlockButtonManyInView: undefined,
   unstable__errors: {
     captcha_invalid:
-      "Sign up unsuccessful due to failed security validations. Please refresh the page to try again or reach out to support for more assistance.",
+      "Doğrulama başarısız oldu. Lütfen sayfayı yenileyin veya daha fazla yardım alın.",
     captcha_unavailable:
-      "Sign up unsuccessful due to failed bot validation. Please refresh the page to try again or reach out to support for more assistance.",
+      "Doğrulama başarısız oldu. Lütfen sayfayı yenileyin veya daha fazla yardım alın.",
     form_code_incorrect: "Hatalı kod",
-    form_identifier_exists: "",
+    form_identifier_exists: "Hata",
     form_identifier_exists__email_address: undefined,
     form_identifier_exists__phone_number: undefined,
     form_identifier_exists__username: undefined,
-    form_identifier_not_found: "",
-    form_param_format_invalid: "",
+    form_identifier_not_found: "Hesap bulunamadı",
+    form_param_format_invalid: "Geçersiz format",
     form_param_format_invalid__email_address:
-      "Email address must be a valid email address.",
+      "E-posta adresi geçerli bir e-posta adresi olmalıdır.",
     form_param_format_invalid__phone_number:
-      "Phone number must be in a valid international format",
+      "Telefon numarası geçerli bir uluslararası biçimde olmalıdır",
     form_param_max_length_exceeded__first_name:
-      "First name should not exceed 256 characters.",
+      "Ad uzunluğu 256 karakterden uzun olamaz.",
     form_param_max_length_exceeded__last_name:
-      "Last name should not exceed 256 characters.",
-    form_param_max_length_exceeded__name:
-      "Name should not exceed 256 characters.",
-    form_param_nil: "",
-    form_password_incorrect: "",
-    form_password_length_too_short: "",
+      "Soyad uzunluğu 256 karakterden uzun olamaz.",
+    form_param_max_length_exceeded__name: "Adınız 256 karakterden uzun olamaz.",
+    form_param_nil: "Boş bırakılamaz",
+    form_password_incorrect: "Şifre hatalı",
+    form_password_length_too_short: "Hata",
     form_password_not_strong_enough: "Şifreniz fazla zayıf",
     form_password_pwned:
       "Bu şifre bir veri saldırısında ele geçirildiği için kullanılamaz. Lütfen başka bir şifre deneyin.",
@@ -503,11 +506,10 @@ export const trTR: LocalizationResource = {
     form_password_size_in_bytes_exceeded:
       "Şifrenize ayrılan depolama alanını aştınız. Lütfen daha kısa bir şifre deneyin.",
     form_password_validation_failed: "Geçersiz şifre",
-    form_username_invalid_character: "",
-    form_username_invalid_length: "",
-    identification_deletion_failed:
-      "You cannot delete your last identification.",
-    not_allowed_access: "",
+    form_username_invalid_character: "Geçersiz kullanıcı adı",
+    form_username_invalid_length: "Geçersiz kullanıcı adı",
+    identification_deletion_failed: "Son hesap silme işlemi yapılamadı.",
+    not_allowed_access: "Erişim izniniz yok",
     passkey_already_exists: undefined,
     passkey_not_supported: undefined,
     passkey_pa_not_supported: undefined,
@@ -522,7 +524,8 @@ export const trTR: LocalizationResource = {
       requireUppercase: "bir büyük harf içermeli",
       sentencePrefix: "Şifreniz;",
     },
-    phone_number_exists: "This phone number is taken. Please try another.",
+    phone_number_exists:
+      "Bu telefon numarası alınmış. Lütfen başka bir tane deneyin.",
     zxcvbn: {
       couldBeStronger:
         "Şifreniz kriterleri sağlıyor, birkaç karakter daha eklerseniz daha güçlü olacaktır.",
@@ -608,11 +611,11 @@ export const trTR: LocalizationResource = {
       title: "Hesap bağla",
     },
     deletePage: {
-      actionDescription: 'Type "Delete account" below to continue.',
-      confirm: "Delete account",
-      messageLine1: "Are you sure you want to delete your account?",
-      messageLine2: "This action is permanent and irreversible.",
-      title: "Delete account",
+      actionDescription: 'Aşağıdaki kutaya "Hesabı sil" yazın.',
+      confirm: "Hesabı sil",
+      messageLine1: "Hesabınızı silmek istediğinizden emin misiniz?",
+      messageLine2: "Bu eylem kalıcıdır ve geri alınamaz.",
+      title: "Hesabı sil",
     },
     emailAddressPage: {
       emailCode: {
@@ -643,18 +646,18 @@ export const trTR: LocalizationResource = {
       title: "E-posta adresi ekle",
       verifyTitle: "Verify email address",
     },
-    formButtonPrimary__add: "Add",
+    formButtonPrimary__add: "Ekle",
     formButtonPrimary__continue: "İlerle",
     formButtonPrimary__finish: "Bitir",
-    formButtonPrimary__remove: "Remove",
-    formButtonPrimary__save: "Save",
+    formButtonPrimary__remove: "Kaldır",
+    formButtonPrimary__save: "Kaydet",
     formButtonReset: "İptal",
     mfaPage: {
       formHint: "Eklemek için bir yöntem seçiniz.",
       title: "İki aşamalı doğrulama yöntemi ekle",
     },
     mfaPhoneCodePage: {
-      backButton: "Use existing number",
+      backButton: "Var olan numarayı kullan",
       primaryButton__addPhoneNumber: "Telefon numarası ekle",
       removeResource: {
         messageLine1:
@@ -670,10 +673,10 @@ export const trTR: LocalizationResource = {
       subtitle__unavailablePhoneNumbers:
         "İki aşamalı SMS kodu doğrulaması için kullanılabilir bir telefon numarası yok.",
       successMessage1:
-        "When signing in, you will need to enter a verification code sent to this phone number as an additional step.",
+        "Giriş yaparken bu telefon numarası için bir doğrulama kodu girmeniz gerekecektir.",
       successMessage2:
-        "Save these backup codes and store them somewhere safe. If you lose access to your authentication device, you can use backup codes to sign in.",
-      successTitle: "SMS code verification enabled",
+        "Bu kodları kaydedin ve güvenli bir yerde saklayın. Eğer uygulamanızın olduğu cihazınıza erişiminizi kaybettiyseniz, bu kodlardan birini kullanarak giriş yapabilirsiniz.",
+      successTitle: "SMS aktivasyonu etkinleştirildi",
       title: "SMS kodu doğrulaması ekle",
     },
     mfaTOTPPage: {
@@ -723,7 +726,7 @@ export const trTR: LocalizationResource = {
       checkboxInfoText__signOutOfOtherSessions:
         "Eski şifrenizi kullanan diğer tüm cihazlardan çıkış yapmanız önerilir.",
       readonly:
-        "Your password can currently not be edited because you can sign in only via the enterprise connection.",
+        "Şifreniz şu anda düzenlenemez, yalnızca giriş yapmak için giriş yapılabilir.",
       successMessage__set: "Şifreniz başarıyla değiştirildi.",
       successMessage__signOutOfOtherSessions:
         "Diğer tüm cihazlardaki oturumlarınız sonlandırıldı.",
@@ -743,7 +746,8 @@ export const trTR: LocalizationResource = {
       },
       successMessage: "{{identifier}} numarası hesabınıza eklendi.",
       title: "Telefon numarası ekle",
-      verifySubtitle: "Enter the verification code sent to {{identifier}}",
+      verifySubtitle:
+        "{{identifier}} numarasına gönderilen doğrulama kodunu girin",
       verifyTitle: "Verify phone number",
     },
     profilePage: {
@@ -770,12 +774,12 @@ export const trTR: LocalizationResource = {
         // @ts-ignore
         subtitle__disconnected: undefined,
         subtitle__reauthorize:
-          "The required scopes have been updated, and you may be experiencing limited functionality. Please re-authorize this application to avoid any issues",
+          "Gerekli izinler güncellendi ama işlevsellik sınırlı olabilir. Lütfen uygulamayı yeniden yetkilendirmeyi unutmayın",
         title: "Bağlı hesaplar",
       },
       dangerSection: {
         deleteAccountButton: "Hesabı sil",
-        title: "Tehlike",
+        title: "Tehlikeli Bölge",
       },
       emailAddressesSection: {
         destructiveAction: "E-posta adresini kaldır",

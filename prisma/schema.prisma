@@ -14,17 +14,279 @@ datasource db {
   directUrl = env("DIRECT_DATABASE_URL")
 }
 
+enum UserRole {
+  admin
+  client
+}
+
+enum TeamRole {
+  owner
+  standart
+}
+
+enum TeamMemberStatus {
+  active
+  inactive
+  pending
+}
+
+enum PublishStatus {
+  in_view
+  reviewing
+  rejected
+}
+
+enum OwnerType {
+  team
+  user
+}
+
 model User {
-  id         String  @id @default(cuid())
-  externalId String? @unique @map(name: "external_id")
-  name       String?
-  email      String  @unique
-  imageUrl   String? @map(name: "image_url")
+  id                String            @id @default(cuid())
+  externalId        String?           @unique
+  name              String?
+  email             String            @unique
+  imageUrl          String?
+  bio               String?
+  role              UserRole          @default(client)
+  isProffesional    Boolean           @default(false)
+  proffessionalInfo ProfessionalInfo?
+  teams             TeamMember[]
+  ownedLands        Land[]            @relation("UserOwnedLands")
+  ownedTeams        Team[]            @relation("TeamOwner")
+  savedSearches     SavedSearch[]
+  favorites         Favorite[]
 
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  @@unique([email], map: "users_email_key")
   @@index([email], map: "users_email_idx")
-  @@index([id], map: "users_idx")
+}
+
+model ProfessionalInfo {
+  id        String   @id @default(cuid())
+  documents String[]
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Team {
+  id          String       @id @default(cuid())
+  name        String
+  description String?
+  imageUrl    String?
+  contactInfo String?
+  ownerId     String
+  owner       User         @relation("TeamOwner", fields: [ownerId], references: [id])
+  ownedLands  Land[]       @relation("TeamOwnedLands")
+  members     TeamMember[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([name])
+  @@index([ownerId])
+}
+
+model TeamMember {
+  id     String   @id @default(cuid())
+  userId String
+  teamId String
+  role   TeamRole
+  user   User     @relation(fields: [userId], references: [id])
+  team   Team     @relation(fields: [teamId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, teamId])
+  @@index([userId])
+  @@index([teamId])
+}
+
+model Land {
+  id                String         @id @default(cuid())
+  format            String
+  province          String
+  district          String
+  latitude          Float
+  longitude         Float
+  size              Float
+  status            String
+  zoningStatus      String
+  isOwner           Boolean        @default(false)
+  description       String?
+  landRegistryInfo  String?
+  price             Float?
+  paymentPeriod     Float?
+  deposit           Float?
+  legalAccess       String?
+  neighborhood      String?
+  streetAdress      String?
+  blockNo           String?
+  zipCode           String?
+  drivingDirections String?
+  ownerId           String
+  ownerType         OwnerType
+  user              User?          @relation("UserOwnedLands", fields: [ownerId], references: [id], map: "UserOwnedLand")
+  team              Team?          @relation("TeamOwnedLands", fields: [ownerId], references: [id], map: "TeamOwnedLand")
+  parcels           Parcel[]
+  propertyTaxes     PropertyTax[]
+  expenses          Expense[]
+  utilities         Utility[]
+  showings          Showing[]
+  photos            Photo[]
+  videos            Video[]
+  attachments       Attachment[]
+  publishStatus     PublishStatus
+  tags              LandTag[]
+  landTypes         LandLandType[]
+  favorites         Favorite[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([province])
+  @@index([district])
+  @@index([status])
+  @@index([price])
+  @@index([latitude, longitude])
+  @@index([ownerId, ownerType])
+}
+
+model Parcel {
+  id     String @id @default(cuid())
+  number String
+  landId String
+  land   Land   @relation(fields: [landId], references: [id])
+
+  @@index([number])
+}
+
+model PropertyTax {
+  id          String  @id @default(cuid())
+  year        Int
+  amount      Float
+  description String?
+  landId      String
+  land        Land    @relation(fields: [landId], references: [id])
+
+  @@index([year])
+}
+
+model Expense {
+  id          String  @id @default(cuid())
+  type        String
+  amount      Float
+  period      String
+  description String?
+  landId      String
+  land        Land    @relation(fields: [landId], references: [id])
+
+  @@index([type])
+}
+
+model Utility {
+  id          String  @id @default(cuid())
+  type        String
+  amount      Float
+  period      String
+  description String?
+  landId      String
+  land        Land    @relation(fields: [landId], references: [id], onDelete: Cascade)
+
+  @@index([type])
+}
+
+model Showing {
+  id     String   @id @default(cuid())
+  date   DateTime
+  landId String
+  land   Land     @relation(fields: [landId], references: [id], onDelete: Cascade)
+
+  @@index([date])
+}
+
+model Photo {
+  id      String  @id @default(cuid())
+  url     String
+  caption String?
+  order   Int
+  landId  String
+  land    Land    @relation(fields: [landId], references: [id], onDelete: Cascade)
+}
+
+model Video {
+  id     String @id @default(cuid())
+  url    String
+  landId String
+  land   Land   @relation(fields: [landId], references: [id], onDelete: Cascade)
+}
+
+model Attachment {
+  id     String @id @default(cuid())
+  url    String
+  landId String
+  land   Land   @relation(fields: [landId], references: [id], onDelete: Cascade)
+
+  @@index([landId])
+}
+
+model SavedSearch {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String?
+  filters   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  landId    String
+  land      Land     @relation(fields: [landId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, landId])
+  @@index([userId])
+  @@index([landId])
+}
+
+model LandType {
+  id    String         @id @default(cuid())
+  name  String         @unique
+  lands LandLandType[]
+
+  @@index([name])
+}
+
+model Tag {
+  id    String    @id @default(cuid())
+  name  String    @unique
+  lands LandTag[]
+
+  @@index([name])
+}
+
+model LandTag {
+  landId String
+  tagId  String
+  land   Land   @relation(fields: [landId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([landId, tagId])
+}
+
+model LandLandType {
+  landId     String
+  landTypeId String
+  land       Land     @relation(fields: [landId], references: [id], onDelete: Cascade)
+  landType   LandType @relation(fields: [landTypeId], references: [id], onDelete: Cascade)
+
+  @@id([landId, landTypeId])
 }

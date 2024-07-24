@@ -45,7 +45,8 @@ export default function NavigationButtons({}) {
             url="/account"
             labelIcon={<Star className="size-4" />}
           />
-          <UserButton.UserProfilePage
+          {/* Custom Page Example */}
+          {/* <UserButton.UserProfilePage
             label="Terms"
             labelIcon={<DotIcon />}
             url="terms"
@@ -54,7 +55,7 @@ export default function NavigationButtons({}) {
               <h1>Custom Terms Page</h1>
               <p>This is the custom terms page</p>
             </div>
-          </UserButton.UserProfilePage>
+          </UserButton.UserProfilePage> */}
         </UserButton>
       </SignedIn>
 
