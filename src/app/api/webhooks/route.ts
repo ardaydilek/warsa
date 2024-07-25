@@ -48,14 +48,27 @@ export async function POST(req: Request) {
   switch (eventType) {
     case "user.created":
       try {
-        const user = await prisma.user.create({
-          data: {
-            externalId: payload.data.id,
-            name: `${payload.data.first_name} ${payload.data.last_name}`,
-            email: payload.data.email_addresses[0].email_address,
-            imageUrl: payload.data.image_url,
-          },
-        });
+        let user = null;
+        if (payload.data.phone_numbers.length !== 0) {
+          user = await prisma.user.create({
+            data: {
+              externalId: payload.data.id,
+              name: `${payload.data.first_name} ${payload.data.last_name}`,
+              email: payload.data.email_addresses[0].email_address,
+              phoneNumber: payload.data.phone_numbers[0].phone_number,
+              imageUrl: payload.data.image_url,
+            },
+          });
+        } else {
+          user = await prisma.user.create({
+            data: {
+              externalId: payload.data.id,
+              name: `${payload.data.first_name} ${payload.data.last_name}`,
+              email: payload.data.email_addresses[0].email_address,
+              imageUrl: payload.data.image_url,
+            },
+          });
+        }
 
         if (!user) throw new Error("User not created");
       } catch (error) {

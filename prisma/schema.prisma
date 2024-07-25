@@ -42,23 +42,24 @@ enum OwnerType {
 }
 
 model User {
-  id                String            @id @default(cuid())
-  externalId        String?           @unique
-  name              String?
-  email             String            @unique
-  imageUrl          String?
-  bio               String?
-  role              UserRole          @default(client)
-  isProffesional    Boolean           @default(false)
-  proffessionalInfo ProfessionalInfo?
-  teams             TeamMember[]
-  ownedLands        Land[]            @relation("UserOwnedLands")
-  ownedTeams        Team[]            @relation("TeamOwner")
-  savedSearches     SavedSearch[]
-  favorites         Favorite[]
+  id                 String            @id @default(cuid())
+  externalId         String            @unique @map("external_id")
+  name               String?
+  email              String            @unique
+  imageUrl           String?           @map("image_url")
+  bio                String?
+  role               UserRole          @default(client)
+  isProffesional     Boolean           @default(false) @map("is_proffesional")
+  proffessional_info ProfessionalInfo?
+  phoneNumber        String?           @unique @map("phone_number")
+  teams              TeamMember[]
+  owned_lands        Land[]            @relation("UserOwnedLands")
+  owned_teams        Team[]            @relation("TeamOwner")
+  saved_searches     SavedSearch[]
+  favorites          Favorite[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   @@index([email], map: "users_email_idx")
 }
