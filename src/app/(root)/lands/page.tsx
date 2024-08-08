@@ -1,6 +1,5 @@
 import PropertiesCard from "@/components/properties-card";
 import PropertiesFilter from "@/components/property/properties-filter";
-import PropertiesMap from "@/components/property/maps/properties-map";
 import { LandData } from "@/lib/mock-data";
 import PropertiesMapReact from "@/components/property/maps/properties-map-react";
 
@@ -8,17 +7,6 @@ export default function Page() {
   return (
     <main className="flex min-h-screen justify-between gap-6">
       <section className="sticky top-16  hidden h-screen w-1/2 overflow-hidden rounded-r-lg md:block">
-        {/* <PropertiesMap
-          properties={LandData.map((item) => ({
-            ...item,
-            imageUrl: `https://cdn.notuscreative.com/warsa-static-lands${item.images[0]}`,
-          }))}
-          initialViewState={{
-            lat: 39.746,
-            long: 26.88587459648408,
-            zoom: 5,
-          }}
-        /> */}
         <PropertiesMapReact
           properties={LandData.map((item) => ({
             ...item,
