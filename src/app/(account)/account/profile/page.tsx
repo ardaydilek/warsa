@@ -1,7 +1,7 @@
-export default function Page({}) {
+export default function Page() {
   return (
     <div className="default-container">
-      <h1>Topraktan Arsa</h1>
+      <h1>Page</h1>
     </div>
   );
 }

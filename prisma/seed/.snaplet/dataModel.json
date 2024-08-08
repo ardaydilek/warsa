@@ -1,0 +1,2760 @@
+{
+  "models": {
+    "Attachment": {
+      "id": "public.Attachment",
+      "schemaName": "public",
+      "tableName": "Attachment",
+      "fields": [
+        {
+          "id": "public.Attachment.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Attachment.url",
+          "name": "url",
+          "columnName": "url",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Attachment.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "AttachmentToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Attachment_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Expense": {
+      "id": "public.Expense",
+      "schemaName": "public",
+      "tableName": "Expense",
+      "fields": [
+        {
+          "id": "public.Expense.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Expense.type",
+          "name": "type",
+          "columnName": "type",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Expense.amount",
+          "name": "amount",
+          "columnName": "amount",
+          "type": "float8",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Expense.period",
+          "name": "period",
+          "columnName": "period",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Expense.description",
+          "name": "description",
+          "columnName": "description",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Expense.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "ExpenseToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Expense_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Favorite": {
+      "id": "public.Favorite",
+      "schemaName": "public",
+      "tableName": "Favorite",
+      "fields": [
+        {
+          "id": "public.Favorite.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Favorite.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Favorite.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Favorite.createdAt",
+          "name": "createdAt",
+          "columnName": "createdAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "FavoriteToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "FavoriteToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Favorite_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "Favorite_userId_landId_key",
+          "fields": [
+            "landId",
+            "userId"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Land": {
+      "id": "public.Land",
+      "schemaName": "public",
+      "tableName": "Land",
+      "fields": [
+        {
+          "id": "public.Land.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.province",
+          "name": "province",
+          "columnName": "province",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.district",
+          "name": "district",
+          "columnName": "district",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.latitude",
+          "name": "latitude",
+          "columnName": "latitude",
+          "type": "float8",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.longitude",
+          "name": "longitude",
+          "columnName": "longitude",
+          "type": "float8",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.size",
+          "name": "size",
+          "columnName": "size",
+          "type": "float8",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.status",
+          "name": "status",
+          "columnName": "status",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.isOwner",
+          "name": "isOwner",
+          "columnName": "isOwner",
+          "type": "bool",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.description",
+          "name": "description",
+          "columnName": "description",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.landRegistryInfo",
+          "name": "landRegistryInfo",
+          "columnName": "landRegistryInfo",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.price",
+          "name": "price",
+          "columnName": "price",
+          "type": "float8",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.paymentPeriod",
+          "name": "paymentPeriod",
+          "columnName": "paymentPeriod",
+          "type": "float8",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.deposit",
+          "name": "deposit",
+          "columnName": "deposit",
+          "type": "float8",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.legalAccess",
+          "name": "legalAccess",
+          "columnName": "legalAccess",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.neighborhood",
+          "name": "neighborhood",
+          "columnName": "neighborhood",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.streetAdress",
+          "name": "streetAdress",
+          "columnName": "streetAdress",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.blockNo",
+          "name": "blockNo",
+          "columnName": "blockNo",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.zipCode",
+          "name": "zipCode",
+          "columnName": "zipCode",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.drivingDirections",
+          "name": "drivingDirections",
+          "columnName": "drivingDirections",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.ownerType",
+          "name": "ownerType",
+          "columnName": "ownerType",
+          "type": "OwnerType",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.publishStatus",
+          "name": "publishStatus",
+          "columnName": "publishStatus",
+          "type": "PublishStatus",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.createdAt",
+          "name": "createdAt",
+          "columnName": "createdAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.updatedAt",
+          "name": "updatedAt",
+          "columnName": "updatedAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.format",
+          "name": "format",
+          "columnName": "format",
+          "type": "LandFormat",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.zoningStatus",
+          "name": "zoningStatus",
+          "columnName": "zoningStatus",
+          "type": "ZoningStatus",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.teamId",
+          "name": "teamId",
+          "columnName": "teamId",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Land.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Team",
+          "type": "Team",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "LandToTeam",
+          "relationFromFields": [
+            "teamId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "LandToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Attachment",
+          "type": "Attachment",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "AttachmentToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Expense",
+          "type": "Expense",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "ExpenseToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Favorite",
+          "type": "Favorite",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "FavoriteToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Parcel",
+          "type": "Parcel",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "ParcelToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Photo",
+          "type": "Photo",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "PhotoToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "PropertyTax",
+          "type": "PropertyTax",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "PropertyTaxToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Showing",
+          "type": "Showing",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "ShowingToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Utility",
+          "type": "Utility",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "UtilityToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Video",
+          "type": "Video",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "VideoToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "_LandToLandType",
+          "type": "_LandToLandType",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "_LandToLandTypeToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "_LandToTag",
+          "type": "_LandToTag",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "_LandToTagToLand",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Land_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "LandType": {
+      "id": "public.LandType",
+      "schemaName": "public",
+      "tableName": "LandType",
+      "fields": [
+        {
+          "id": "public.LandType.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.LandType.name",
+          "name": "name",
+          "columnName": "name",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "_LandToLandType",
+          "type": "_LandToLandType",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "_LandToLandTypeToLandType",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "LandType_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "LandType_name_key",
+          "fields": [
+            "name"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Parcel": {
+      "id": "public.Parcel",
+      "schemaName": "public",
+      "tableName": "Parcel",
+      "fields": [
+        {
+          "id": "public.Parcel.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Parcel.number",
+          "name": "number",
+          "columnName": "number",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Parcel.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "ParcelToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Parcel_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Photo": {
+      "id": "public.Photo",
+      "schemaName": "public",
+      "tableName": "Photo",
+      "fields": [
+        {
+          "id": "public.Photo.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Photo.url",
+          "name": "url",
+          "columnName": "url",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Photo.caption",
+          "name": "caption",
+          "columnName": "caption",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Photo.order",
+          "name": "order",
+          "columnName": "order",
+          "type": "int4",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Photo.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "PhotoToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Photo_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "ProfessionalInfo": {
+      "id": "public.ProfessionalInfo",
+      "schemaName": "public",
+      "tableName": "ProfessionalInfo",
+      "fields": [
+        {
+          "id": "public.ProfessionalInfo.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.ProfessionalInfo.documents",
+          "name": "documents",
+          "columnName": "documents",
+          "type": "text[]",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.ProfessionalInfo.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "ProfessionalInfoToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "ProfessionalInfo_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "ProfessionalInfo_userId_key",
+          "fields": [
+            "userId"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "PropertyTax": {
+      "id": "public.PropertyTax",
+      "schemaName": "public",
+      "tableName": "PropertyTax",
+      "fields": [
+        {
+          "id": "public.PropertyTax.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.PropertyTax.year",
+          "name": "year",
+          "columnName": "year",
+          "type": "int4",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.PropertyTax.amount",
+          "name": "amount",
+          "columnName": "amount",
+          "type": "float8",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.PropertyTax.description",
+          "name": "description",
+          "columnName": "description",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.PropertyTax.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "PropertyTaxToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "PropertyTax_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "SavedSearch": {
+      "id": "public.SavedSearch",
+      "schemaName": "public",
+      "tableName": "SavedSearch",
+      "fields": [
+        {
+          "id": "public.SavedSearch.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.SavedSearch.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.SavedSearch.name",
+          "name": "name",
+          "columnName": "name",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.SavedSearch.filters",
+          "name": "filters",
+          "columnName": "filters",
+          "type": "jsonb",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.SavedSearch.createdAt",
+          "name": "createdAt",
+          "columnName": "createdAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.SavedSearch.updatedAt",
+          "name": "updatedAt",
+          "columnName": "updatedAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "SavedSearchToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "SavedSearch_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Showing": {
+      "id": "public.Showing",
+      "schemaName": "public",
+      "tableName": "Showing",
+      "fields": [
+        {
+          "id": "public.Showing.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Showing.date",
+          "name": "date",
+          "columnName": "date",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Showing.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "ShowingToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Showing_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Tag": {
+      "id": "public.Tag",
+      "schemaName": "public",
+      "tableName": "Tag",
+      "fields": [
+        {
+          "id": "public.Tag.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Tag.name",
+          "name": "name",
+          "columnName": "name",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "_LandToTag",
+          "type": "_LandToTag",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "_LandToTagToTag",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Tag_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "Tag_name_key",
+          "fields": [
+            "name"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Team": {
+      "id": "public.Team",
+      "schemaName": "public",
+      "tableName": "Team",
+      "fields": [
+        {
+          "id": "public.Team.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.name",
+          "name": "name",
+          "columnName": "name",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.description",
+          "name": "description",
+          "columnName": "description",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.imageUrl",
+          "name": "imageUrl",
+          "columnName": "imageUrl",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.contactInfo",
+          "name": "contactInfo",
+          "columnName": "contactInfo",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.ownerId",
+          "name": "ownerId",
+          "columnName": "ownerId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.createdAt",
+          "name": "createdAt",
+          "columnName": "createdAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Team.updatedAt",
+          "name": "updatedAt",
+          "columnName": "updatedAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "TeamToUser",
+          "relationFromFields": [
+            "ownerId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "LandToTeam",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "TeamMember",
+          "type": "TeamMember",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "TeamMemberToTeam",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Team_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "TeamMember": {
+      "id": "public.TeamMember",
+      "schemaName": "public",
+      "tableName": "TeamMember",
+      "fields": [
+        {
+          "id": "public.TeamMember.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.TeamMember.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.TeamMember.teamId",
+          "name": "teamId",
+          "columnName": "teamId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.TeamMember.role",
+          "name": "role",
+          "columnName": "role",
+          "type": "TeamRole",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.TeamMember.createdAt",
+          "name": "createdAt",
+          "columnName": "createdAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.TeamMember.updatedAt",
+          "name": "updatedAt",
+          "columnName": "updatedAt",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Team",
+          "type": "Team",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "TeamMemberToTeam",
+          "relationFromFields": [
+            "teamId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "TeamMemberToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "TeamMember_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "TeamMember_userId_teamId_key",
+          "fields": [
+            "teamId",
+            "userId"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "User": {
+      "id": "public.User",
+      "schemaName": "public",
+      "tableName": "User",
+      "fields": [
+        {
+          "id": "public.User.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.name",
+          "name": "name",
+          "columnName": "name",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.email",
+          "name": "email",
+          "columnName": "email",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.bio",
+          "name": "bio",
+          "columnName": "bio",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.role",
+          "name": "role",
+          "columnName": "role",
+          "type": "UserRole",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.created_at",
+          "name": "created_at",
+          "columnName": "created_at",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.external_id",
+          "name": "external_id",
+          "columnName": "external_id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.image_url",
+          "name": "image_url",
+          "columnName": "image_url",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.is_proffesional",
+          "name": "is_proffesional",
+          "columnName": "is_proffesional",
+          "type": "bool",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.updated_at",
+          "name": "updated_at",
+          "columnName": "updated_at",
+          "type": "timestamp",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.User.phone_number",
+          "name": "phone_number",
+          "columnName": "phone_number",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Favorite",
+          "type": "Favorite",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "FavoriteToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "LandToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "ProfessionalInfo",
+          "type": "ProfessionalInfo",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "ProfessionalInfoToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "SavedSearch",
+          "type": "SavedSearch",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "SavedSearchToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Team",
+          "type": "Team",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "TeamToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "TeamMember",
+          "type": "TeamMember",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "TeamMemberToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "User_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "User_email_key",
+          "fields": [
+            "email"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "User_external_id_key",
+          "fields": [
+            "external_id"
+          ],
+          "nullNotDistinct": false
+        },
+        {
+          "name": "User_phone_number_key",
+          "fields": [
+            "phone_number"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Utility": {
+      "id": "public.Utility",
+      "schemaName": "public",
+      "tableName": "Utility",
+      "fields": [
+        {
+          "id": "public.Utility.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Utility.type",
+          "name": "type",
+          "columnName": "type",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Utility.amount",
+          "name": "amount",
+          "columnName": "amount",
+          "type": "float8",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Utility.period",
+          "name": "period",
+          "columnName": "period",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Utility.description",
+          "name": "description",
+          "columnName": "description",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Utility.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "UtilityToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Utility_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "Video": {
+      "id": "public.Video",
+      "schemaName": "public",
+      "tableName": "Video",
+      "fields": [
+        {
+          "id": "public.Video.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public.Video.url",
+          "name": "url",
+          "columnName": "url",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public.Video.landId",
+          "name": "landId",
+          "columnName": "landId",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "VideoToLand",
+          "relationFromFields": [
+            "landId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "Video_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "_LandToLandType": {
+      "id": "public._LandToLandType",
+      "schemaName": "public",
+      "tableName": "_LandToLandType",
+      "fields": [
+        {
+          "id": "public._LandToLandType.A",
+          "name": "A",
+          "columnName": "A",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public._LandToLandType.B",
+          "name": "B",
+          "columnName": "B",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "_LandToLandTypeToLand",
+          "relationFromFields": [
+            "A"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "LandType",
+          "type": "LandType",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "_LandToLandTypeToLandType",
+          "relationFromFields": [
+            "B"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "_LandToLandType_AB_unique",
+          "fields": [
+            "A",
+            "B"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "_LandToTag": {
+      "id": "public._LandToTag",
+      "schemaName": "public",
+      "tableName": "_LandToTag",
+      "fields": [
+        {
+          "id": "public._LandToTag.A",
+          "name": "A",
+          "columnName": "A",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "public._LandToTag.B",
+          "name": "B",
+          "columnName": "B",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "name": "Land",
+          "type": "Land",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "_LandToTagToLand",
+          "relationFromFields": [
+            "A"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Tag",
+          "type": "Tag",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "_LandToTagToTag",
+          "relationFromFields": [
+            "B"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "_LandToTag_AB_unique",
+          "fields": [
+            "A",
+            "B"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    },
+    "_prisma_migrations": {
+      "id": "public._prisma_migrations",
+      "schemaName": "public",
+      "tableName": "_prisma_migrations",
+      "fields": [
+        {
+          "id": "public._prisma_migrations.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": 36
+        },
+        {
+          "id": "public._prisma_migrations.checksum",
+          "name": "checksum",
+          "columnName": "checksum",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 64
+        },
+        {
+          "id": "public._prisma_migrations.finished_at",
+          "name": "finished_at",
+          "columnName": "finished_at",
+          "type": "timestamptz",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public._prisma_migrations.migration_name",
+          "name": "migration_name",
+          "columnName": "migration_name",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 255
+        },
+        {
+          "id": "public._prisma_migrations.logs",
+          "name": "logs",
+          "columnName": "logs",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public._prisma_migrations.rolled_back_at",
+          "name": "rolled_back_at",
+          "columnName": "rolled_back_at",
+          "type": "timestamptz",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public._prisma_migrations.started_at",
+          "name": "started_at",
+          "columnName": "started_at",
+          "type": "timestamptz",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "public._prisma_migrations.applied_steps_count",
+          "name": "applied_steps_count",
+          "columnName": "applied_steps_count",
+          "type": "int4",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "_prisma_migrations_pkey",
+          "fields": [
+            "id"
+          ],
+          "nullNotDistinct": false
+        }
+      ]
+    }
+  },
+  "enums": {
+    "LandFormat": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "auction"
+        },
+        {
+          "name": "lease"
+        },
+        {
+          "name": "sale"
+        }
+      ]
+    },
+    "OwnerType": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "team"
+        },
+        {
+          "name": "user"
+        }
+      ]
+    },
+    "PublishStatus": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "in_view"
+        },
+        {
+          "name": "rejected"
+        },
+        {
+          "name": "reviewing"
+        }
+      ]
+    },
+    "TeamMemberStatus": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "active"
+        },
+        {
+          "name": "inactive"
+        },
+        {
+          "name": "pending"
+        }
+      ]
+    },
+    "TeamRole": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "owner"
+        },
+        {
+          "name": "standart"
+        }
+      ]
+    },
+    "UserRole": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "admin"
+        },
+        {
+          "name": "client"
+        }
+      ]
+    },
+    "ZoningStatus": {
+      "schemaName": "public",
+      "values": [
+        {
+          "name": "commercial"
+        },
+        {
+          "name": "public"
+        },
+        {
+          "name": "without_zoned"
+        },
+        {
+          "name": "zoned"
+        }
+      ]
+    }
+  }
+}

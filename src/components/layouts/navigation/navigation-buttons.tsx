@@ -11,7 +11,7 @@ import {
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { MobileNavbar } from "@/components/layouts/navigation/mobile-navbar";
-import { DotIcon, Star } from "lucide-react";
+import { UserRoundPlus } from "lucide-react";
 
 export default function NavigationButtons({}) {
   return (
@@ -20,7 +20,6 @@ export default function NavigationButtons({}) {
 
       <SignedOut>
         <ClerkLoading>
-          {/* <div className="size-6 rounded-full bg-primary" /> */}
           <Button className="hidden lg:flex">Giriş Yap</Button>
         </ClerkLoading>
         <SignInButton mode="modal">
@@ -34,16 +33,15 @@ export default function NavigationButtons({}) {
         <UserButton
           appearance={{
             elements: {
-              // rootBox: "border border-red-500",
               userButtonBox: "",
               avatarBox: "size-6",
             },
           }}
         >
           <UserButton.UserProfileLink
-            label="Kaydettikleriniz"
-            url="/account"
-            labelIcon={<Star className="size-4" />}
+            label="Hesap Detayları"
+            url="/account/profile"
+            labelIcon={<UserRoundPlus className="size-4" />}
           />
           {/* Custom Page Example */}
           {/* <UserButton.UserProfilePage

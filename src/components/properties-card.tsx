@@ -23,6 +23,7 @@ export default function PropertiesCard({
   description,
   social_areas,
   status,
+  slug,
   location,
   added_date,
   total_project_area,
@@ -33,6 +34,7 @@ export default function PropertiesCard({
   description: string;
   social_areas: string[];
   status: string;
+  slug: string;
   location: string;
   added_date: string;
   total_project_area?: string;
@@ -57,20 +59,20 @@ export default function PropertiesCard({
   return (
     <Link
       className={cn(
-        "w-80 relative bg-surface-container rounded-lg overflow-hidden pb-4 group/link space-y-4",
+        "w-96 relative bg-surface-container rounded-lg overflow-hidden pb-4 group/link flex flex-col gap-4",
         className
       )}
-      href={`/`}
+      href={`/lands/${slug}`}
     >
       <Carousel
         className="group/carousel relative"
         setApi={setApi}
       >
         <div
-          className="absolute top-2 right-2 z-[1]"
+          className="absolute right-2 top-2 z-[1]"
           onClick={(e) => e.preventDefault()}
         >
-          <Heart className="w-6 h-6 text-white hover:text-error" />
+          <Heart className="size-6 text-white hover:text-error" />
         </div>
         <CarouselContent className="!ml-0">
           {images.map((image, index) => (
@@ -83,46 +85,19 @@ export default function PropertiesCard({
                 alt={`${title}-${index}`}
                 width={400}
                 height={400}
-                className="absolute w-full h-full top-0 left-0 object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
+                className="absolute left-0 top-0 size-full object-cover transition-all duration-300 ease-in-out group-hover:brightness-125"
               />
             </CarouselItem>
           ))}
-          {/* <CarouselItem className="relative pt-[65%]">
-            <Image
-              src={"https://picsum.photos/400/400"}
-              alt={"alt"}
-              width={400}
-              height={400}
-              className="absolute w-full h-full top-0 left-0 object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
-            />
-          </CarouselItem>
-          <CarouselItem className="relative pt-[65%]">
-            <Image
-              src={"https://picsum.photos/400/400"}
-              alt={"alt"}
-              width={400}
-              height={400}
-              className="absolute w-full h-full top-0 left-0 object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
-            />
-          </CarouselItem>
-          <CarouselItem className="relative pt-[65%]">
-            <Image
-              src={"https://picsum.photos/400/400"}
-              alt={"alt"}
-              width={400}
-              height={400}
-              className="absolute w-full h-full top-0 left-0 object-cover group-hover:brightness-125 transition-all duration-300 ease-in-out"
-            />
-          </CarouselItem> */}
         </CarouselContent>
         <div
-          className="absolute bottom-2 right-0 flex justify-center items-center w-full text-white"
+          className="absolute bottom-2 right-0 flex w-full items-center justify-center text-white"
           onClick={(e) => {
             e.stopPropagation();
             e.preventDefault();
           }}
         >
-          <CarouselPrevious className="bg-transparent border-none lg:hidden lg:group-hover/carousel:flex" />
+          <CarouselPrevious className="border-none bg-transparent lg:hidden lg:group-hover/carousel:flex" />
           <p
             className={cn(
               "text-sm tracking-[0.1px] font-medium",
@@ -139,30 +114,30 @@ export default function PropertiesCard({
           >
             {current}/{count}
           </p>
-          <CarouselNext className="bg-transparent border-none lg:hidden lg:group-hover/carousel:flex" />
+          <CarouselNext className="border-none bg-transparent lg:hidden lg:group-hover/carousel:flex" />
         </div>
       </Carousel>
 
-      <div className="flex flex-col gap-1 px-4 group/card">
-        <div className="flex gap-6 group-hover/card:text-primary transition-colors duration-100 ease-in-out">
-          <h3 className="text-lg font-bold tracking-tight leading-5">
+      <div className="group/card flex flex-col gap-1 px-4">
+        <div className="flex gap-6 transition-colors duration-100 ease-in-out group-hover/card:text-primary">
+          <h3 className="text-lg font-bold leading-5 tracking-tight">
             1.500.000₺
           </h3>
-          <h3 className="text-lg font-bold tracking-[-0.5px] leading-5">
+          <h3 className="text-lg font-bold leading-5 tracking-[-0.5px]">
             {total_project_area}
           </h3>
         </div>
-        <h4 className="text-surface-foreground tracking-[-0.5px]">
+        <h4 className="tracking-[-0.5px] text-surface-foreground">
           {location}
         </h4>
       </div>
 
-      <div className="flex justify-between px-4 items-center pt-4">
+      <div className="mt-auto flex items-center justify-between px-4 pt-4">
         <h5 className="text-sm font-bold tracking-[0.1px]">
           {location.split("-")[0]}, 06510
         </h5>
 
-        <div className="w-6 h-6 text-surface-on-variant hover:text-primary transition-colors duration-100 ease-in-out z-20">
+        <div className="z-20 size-6 text-surface-on-variant transition-colors duration-100 ease-in-out hover:text-primary">
           <Info />
         </div>
       </div>

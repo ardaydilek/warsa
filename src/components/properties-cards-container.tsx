@@ -14,6 +14,7 @@ export default function PropertiesCardsContainer({}) {
             key={`properties-card-${index}`}
             className="shrink-0 snap-start scroll-mx-1"
             title={item.title}
+            slug={item.slug}
             description={item.description}
             images={item.images}
             social_areas={item.social_areas}

@@ -41,6 +41,19 @@ enum OwnerType {
   user
 }
 
+enum LandFormat {
+  sale
+  lease
+  auction
+}
+
+enum ZoningStatus {
+  zoned //imarli_arsa
+  without_zoned //imarsiz_arsa
+  public // kamu_arsasi
+  commercial // ticari_arsa
+}
+
 model User {
   id                 String            @id @default(cuid())
   externalId         String            @unique @map("external_id")
@@ -106,43 +119,44 @@ model TeamMember {
 }
 
 model Land {
-  id                String         @id @default(cuid())
-  format            String
-  province          String
-  district          String
-  latitude          Float
-  longitude         Float
-  size              Float
-  status            String
-  zoningStatus      String
-  isOwner           Boolean        @default(false)
+  id                String        @id @default(cuid())
+  format            LandFormat    @default(sale) // Satış formatı (satılık, kiralık)
+  province          String // İl
+  district          String // İlçe
+  neighborhood      String? // Mahalle
+  streetAdress      String? // Sokak adresi
+  latitude          Float // Enlem
+  longitude         Float // Boylam
+  size              Float // Arazi büyüklüğü (m²)
+  status            String // Durum (örn. müsait, satıldı)
+  zoningStatus      ZoningStatus? // İmar durumu (konut alanı, ticari alan, sanayi alan, karma, tarım alanı)
+  isOwner           Boolean       @default(false) // Arazi sahibi mi?
   description       String?
-  landRegistryInfo  String?
-  price             Float?
-  paymentPeriod     Float?
-  deposit           Float?
-  legalAccess       String?
-  neighborhood      String?
-  streetAdress      String?
-  blockNo           String?
+  landRegistryInfo  String? // Tapu bilgisi
+  price             Float // Fiyat
+  paymentPeriod     Float? // Ödeme periyodu
+  deposit           Float? // Depozito
+  legalAccess       String? // Yasal erişim
+  blockNo           String? // Ada no
   zipCode           String?
-  drivingDirections String?
-  ownerId           String
+  drivingDirections String? // Yol tarifi
+  userId            String?
+  teamId            String?
   ownerType         OwnerType
-  user              User?          @relation("UserOwnedLands", fields: [ownerId], references: [id], map: "UserOwnedLand")
-  team              Team?          @relation("TeamOwnedLands", fields: [ownerId], references: [id], map: "TeamOwnedLand")
-  parcels           Parcel[]
-  propertyTaxes     PropertyTax[]
-  expenses          Expense[]
-  utilities         Utility[]
-  showings          Showing[]
-  photos            Photo[]
-  videos            Video[]
-  attachments       Attachment[]
-  publishStatus     PublishStatus
-  tags              LandTag[]
-  landTypes         LandLandType[]
-  favorites         Favorite[]
+  user              User?         @relation("UserOwnedLands", fields: [userId], references: [id])
+  team              Team?         @relation("TeamOwnedLands", fields: [teamId], references: [id])
+  parcels           Parcel[] // Parcel Numaraları
+  propertyTaxes     PropertyTax[] // Emlak vergileri -
+  expenses          Expense[] // Giderler -
+  utilities         Utility[] // Altyapı hizmetleri
+  showings          Showing[] // Gösterimler -
+  photos            Photo[] // Fotoğraflar
+  videos            Video[] // Videolar
+  attachments       Attachment[] // Ek dosyalar
+  publishStatus     PublishStatus // Yayın durumu
+  tags              Tag[] // Etiketler
+  landTypes         LandType[] // Arazi tipleri (tarla, orman, mera, bağ, zeytinlik, boş arsa) -
+  favorites         Favorite[] // Kullanıcın favoriye eklediği araziler
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -152,7 +166,8 @@ model Land {
   @@index([status])
   @@index([price])
   @@index([latitude, longitude])
-  @@index([ownerId, ownerType])
+  @@index([userId])
+  @@index([teamId])
 }
 
 model Parcel {
@@ -259,35 +274,17 @@ model Favorite {
 }
 
 model LandType {
-  id    String         @id @default(cuid())
-  name  String         @unique
-  lands LandLandType[]
+  id    String @id @default(cuid())
+  name  String @unique
+  lands Land[]
 
   @@index([name])
 }
 
 model Tag {
-  id    String    @id @default(cuid())
-  name  String    @unique
-  lands LandTag[]
+  id    String @id @default(cuid())
+  name  String @unique
+  lands Land[]
 
   @@index([name])
-}
-
-model LandTag {
-  landId String
-  tagId  String
-  land   Land   @relation(fields: [landId], references: [id], onDelete: Cascade)
-  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
-
-  @@id([landId, tagId])
-}
-
-model LandLandType {
-  landId     String
-  landTypeId String
-  land       Land     @relation(fields: [landId], references: [id], onDelete: Cascade)
-  landType   LandType @relation(fields: [landTypeId], references: [id], onDelete: Cascade)
-
-  @@id([landId, landTypeId])
 }
