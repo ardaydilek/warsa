@@ -73,7 +73,7 @@ export default function ImageInfoContainer() {
         {showLeftArrow && (
           <Button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-2 shadow-md"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-2 text-primary shadow-md hover:text-white"
           >
             <ChevronLeft size={24} />
           </Button>
@@ -81,7 +81,7 @@ export default function ImageInfoContainer() {
         {showRightArrow && (
           <Button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-2 shadow-md"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white p-2 text-primary shadow-md hover:text-white"
           >
             <ChevronRight size={24} />
           </Button>
