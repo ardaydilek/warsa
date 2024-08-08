@@ -9,7 +9,7 @@ import Image from "next/image";
 export default async function Home() {
   return (
     <main className=" min-h-screen">
-      <div className="relative -top-14 py-24">
+      <div className="relative -top-16 pb-24 pt-52">
         <div className="after:bg-gradient-210 w-full overflow-hidden rounded-md rounded-b-lg pb-[10%] after:absolute after:inset-0 after:z-[-1]">
           <Image
             src="/hero2.jpeg"
